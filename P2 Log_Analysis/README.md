@@ -70,7 +70,7 @@ The program you write in this project will run from the command line. It won't t
   | author  | text    |
   | Hits    | Integer |
   
-  2. Create vier error_log_view using:
+  2. error_log_view:
   ```
     create view error_log_view as select date(time) as Date, round(100.0 * sum(case log.status when '200 OK' then 0 else 1 end)/count(log.status),3) as Percent_Error from log group by Date order by Percent_Error desc;
   ```
