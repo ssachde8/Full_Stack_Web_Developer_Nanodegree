@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+    <link rel="stylesheet" href="css/style.css"></link>
+    <title>Neighborhood Map</title>
+  </head>
+  <body>
+
+    <div class="container" style="width:100%">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 style="text-align:center"><strong>My Places</strong></h2></br>
+          <div class="input-group" style="width:100%">
+            <input class="form-control" type="text" name="search" placeholder="Search for a place.." data-bind="textInput: searchFor, valueUpdate: 'afterkeydown'" /></br>
+          </div></br>
+
+          <ul class="list-group" data-bind="foreach: places">
+            <a class="list-group-item" href="" data-bind="text: name, click: activate"></a>
+          </ul>
+        </div>
+      <div class="col-md-8">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="js/knockout.js"></script>
+    <script src='js/jquery-3.2.1.min.js'></script>
+    <script src="js/app.js"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnZDnhTmrPE8AUsRTYoG0qvYujlw5DlEk&v=3&callback=initApp&libraries=places" onerror="error()"></script>
+    </script>
+
+
+  </body>
+</html>
