@@ -29,7 +29,7 @@ and various ways to browse the content.
 ## How to Run:
 Clone the repository and run index.html.
 
-## How to User:
+## How to Use:
   * Search for a place
   * Cick on a place on the sidebar
   * Click on a marker on map to see place info
