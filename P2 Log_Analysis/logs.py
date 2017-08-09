@@ -1,29 +1,30 @@
+#!/usr/bin/env python3
 import psycopg2
 
 DB_NAME = "news"
 db = psycopg2.connect(database=DB_NAME)
 
 
-def run_query(query):
-	c = db.cursor()
-	c.execute(query)
-	results = c.fetchall()
-	return results
-	
-	
 def print_article_result(query):
-	print(query['ques'])
-	for res in query['ans']:
-		print('\t' + str(res[0]) + ' --- ' + str(res[1]) + ' views')
-	return
-	
-def print_error_result(query):
-	print(query['ques'])
-	for result in query['ans']:
-		print('\t' + str(result[0]) + ' --- ' + str(result[1]) + ' %')
-	return
+    print(query['ques'])
+    for res in query['ans']:
+        print('\t' + str(res[0]) + ' --- ' + str(res[1]) + ' views')
+    return
 
-		
+
+def print_error_result(query):
+    print(query['ques'])
+    for result in query['ans']:
+        print('\t' + str(result[0]) + ' --- ' + str(result[1]) + ' %')
+    return
+
+
+def run_query(query):
+    c = db.cursor()
+    c.execute(query)
+    results = c.fetchall()
+    return results
+
 # 1. What are the most popular three articles of all time?
 q1 = "select title, Hits from articles_view limit 3";
 
