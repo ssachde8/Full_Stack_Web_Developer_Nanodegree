@@ -34,7 +34,7 @@ articles_view as av, authors as a where a.id = av.author
 group by a.name order by Hits desc"""
 
 # 3. On which days did more than 1% of requests lead to errors?
-q3 = "select * from error_log_view where \"Percent_Error\" > 1"
+q3 = "select * from error_log_view where Percent_Error > 1"
 
 # Question names
 (q1_res, q2_res, q3_res) = dict(), dict(), dict()
@@ -43,7 +43,9 @@ q2_res['ques'] = "\n2. The most popular article authors of all time are:\n"
 q3_res['ques'] = "\n3. Days with more than 1% of request that lead to an error:\n"
 
 # Store query results
-(q1_res['ans'], q2_res['ans'], q3_res['ans']) = run_query(q1), run_query(q2), run_query(q3)
+q1_res['ans'] = run_query(q1)
+q2_res['ans'] = run_query(q2)
+q3_res['ans'] = run_query(q3)
 
 # Print Output
 print_article_result(q1_res)
