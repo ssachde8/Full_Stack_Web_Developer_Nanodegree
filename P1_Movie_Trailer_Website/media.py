@@ -6,11 +6,11 @@ class Movie:
     Movie Trailers Website
     params:
     title(str): Title of movie_title
-    poster_image_url (str): Image from IMDB
-    trailer_youtube_url(str): Movie trailer from youtube
+    img (str): Image from IMDB
+    trailer(str): Movie trailer from youtube
     """
 
-    def __init__(self, title, poster_image_url, trailer_youtube_url):
+    def __init__(self, title, img, trailer):
         self.title = title  # set movie title
-        self.img = poster_image_url  # set poster image url
-        self.trailer = trailer_youtube_url  # set trailer url
+        self.img = img  # set poster image url
+        self.trailer = trailer  # set trailer url
