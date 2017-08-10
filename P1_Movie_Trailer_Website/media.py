@@ -12,5 +12,5 @@ class Movie:
 
     def __init__(self, title, poster_image_url, trailer_youtube_url):
         self.title = title  # set movie title
-        self.poster_image_url = poster_image_url  # set poster image url
-        self.trailer_youtube_url = trailer_youtube_url  # set trailer url
+        self.img = poster_image_url  # set poster image url
+        self.trailer = trailer_youtube_url  # set trailer url
